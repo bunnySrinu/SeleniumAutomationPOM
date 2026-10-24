@@ -1,51 +1,82 @@
 # 🧪 Selenium Automation Framework — Page Object Model
 
-A UI test automation framework built with **Selenium WebDriver, Java, TestNG, and Maven**, following the **Page Object Model (POM)** design pattern to support readable, reusable, and maintainable automated tests.
+A UI test automation project built using **Java, Selenium WebDriver, TestNG, and Maven**, following the **Page Object Model (POM)** design pattern to promote readable, reusable, and maintainable automated tests.
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium WebDriver" />
-  <img src="https://img.shields.io/badge/TestNG-EF2D5E?style=for-the-badge&logo=testinglibrary&logoColor=white" alt="TestNG" />
-  <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven" />
+  <img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17" />
+  <img src="https://img.shields.io/badge/Selenium-4.34.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium WebDriver 4.34.0" />
+  <img src="https://img.shields.io/badge/TestNG-7.11.0-EF2D5E?style=for-the-badge" alt="TestNG 7.11.0" />
+  <img src="https://img.shields.io/badge/Maven-3-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven" />
 </p>
 
 ---
 
 ## 📖 Overview
 
-This project demonstrates the Page Object Model approach to Selenium automation by separating page interactions, locators, and actions from test logic. This separation helps keep tests readable and makes page-specific changes easier to maintain.
+This project demonstrates a structured approach to Selenium UI test automation using the **Page Object Model**.
 
-## 🛠️ Tech Stack
+POM separates page-specific interactions, such as element locators and actions, from test logic. This separation helps improve readability, reuse, and maintainability when application pages change.
 
-- **Language:** Java
-- **UI Automation:** Selenium WebDriver
-- **Test Framework:** TestNG
-- **Build Tool:** Maven
-- **Design Pattern:** Page Object Model (POM)
+The project uses Maven for dependency management and TestNG for test organization.
+
+## 🎯 Project Objectives
+
+- Practice UI test automation using Selenium WebDriver and Java.
+- Organize automation code using the Page Object Model.
+- Configure and execute tests using TestNG and Maven.
+- Maintain a structured foundation for extending automated test coverage.
+- Explore maintainable automation practices for future improvements.
+
+## 🛠️ Technology Stack
+
+| Technology | Version / Purpose |
+|---|---|
+| Java | JDK 17 |
+| Selenium WebDriver | 4.34.0 |
+| TestNG | 7.11.0 |
+| Apache Maven | Build and dependency management |
+| Maven Surefire Plugin | 3.5.3 |
+| JUnit Jupiter Engine | 5.13.3 dependency |
+| Selenium Grid | 4.34.0 dependency |
+| Selenium Manager | 4.34.0 dependency |
+| Selenium Logger | 2.4.0 dependency |
+| Page Object Model | Test automation design pattern |
+
+Dependency versions are based on the project's `pom.xml`. Maven itself must be installed separately.
 
 ## 📂 Project Structure
 
 ```text
 SeleniumAutomationPOM/
-├── src/                # Source code and automation tests
-├── test-output/        # Test execution output, if generated
-├── pom.xml             # Maven dependencies and build configuration
-├── testng.xml          # TestNG suite configuration
-└── .gitignore
+├── src/
+│   └── Source code and automation tests
+├── test-output/
+│   └── Test execution output, if generated
+├── .gitignore
+├── pom.xml
+├── testng.xml
+└── README.md
 ```
 
-The exact package and class structure can be documented here once verified against the source code.
+The package and class structure inside `src/` can be documented in more detail as the framework is verified and expanded.
 
 ## ⚙️ Prerequisites
 
-Before running the project, ensure that you have:
+Before running the project, ensure you have:
 
-- A compatible Java JDK
-- Apache Maven
-- A supported browser, such as Google Chrome
-- Browser-driver configuration compatible with the installed Selenium version
+- Java Development Kit (JDK) 17
+- Apache Maven installed and configured
+- A supported web browser, such as Google Chrome, if required by the tests
+- Internet access to download Maven dependencies
 
-Refer to `pom.xml` for the project's configured dependencies and versions.
+Verify your Java and Maven installations:
+
+```bash
+java -version
+mvn -version
+```
+
+Ensure that Java 17 is selected for the project.
 
 ## 🚀 Getting Started
 
@@ -53,38 +84,84 @@ Refer to `pom.xml` for the project's configured dependencies and versions.
 
 ```bash
 git clone https://github.com/bunnySrinu/SeleniumAutomationPOM.git
+```
+
+### 2. Navigate to the project
+
+```bash
 cd SeleniumAutomationPOM
 ```
 
-### 2. Review the configuration
+### 3. Review the configuration
 
-Review `pom.xml` for dependencies and build configuration, and `testng.xml` for the configured test suite.
+Review the following files before executing the tests:
 
-### 3. Run the tests
+- `pom.xml` — Maven dependencies, Java compiler settings, and build configuration.
+- `testng.xml` — TestNG suite configuration.
 
-The following command can be used if the Maven configuration is set up to execute the project's TestNG suite:
+### 4. Execute the Maven test lifecycle
 
 ```bash
 mvn clean test
 ```
 
-### 4. Review test results
+This command cleans the Maven build output and invokes the test phase. The tests actually executed depend on the test classes, naming conventions, framework configuration, and Surefire setup.
 
-After execution, review the test output and any reports generated by the project. The actual report location depends on the configured TestNG and Maven settings.
+**Note:** The repository configuration should be verified to ensure the intended TestNG suite is executed. The presence of `testng.xml` alone does not guarantee that Maven Surefire uses it.
 
-## 🗺️ Roadmap
+## 🧪 Test Execution and Reports
 
-- [ ] Add automated execution using GitHub Actions or Jenkins
-- [ ] Integrate a reporting tool such as Extent Reports or Allure
-- [ ] Add cross-browser testing support
-- [ ] Add data-driven testing examples
+After running the tests:
+
+1. Review the Maven console output.
+2. Check the number of tests run, failures, errors, and skipped tests.
+3. Review any reports generated by the configured test framework.
+4. Investigate failed tests and rerun them after fixing the underlying issues.
+
+The project contains a `test-output/` directory. Its contents and report-generation behavior depend on the current configuration and execution results.
+
+The Maven Surefire configuration includes a setting to rerun failing tests up to three times. The effective behavior should be verified against the test framework and actual execution results.
+
+## 🏗️ Design Approach: Page Object Model
+
+The Page Object Model is a design pattern commonly used in UI automation.
+
+Its main purpose is to separate page interactions from test logic.
+
+**Typical responsibilities include:**
+
+- **Page objects:** Encapsulate page-specific locators and interactions.
+- **Test classes:** Define test scenarios and verify expected behavior.
+- **Test configuration:** Controls how the test suite is organized and executed.
+
+The actual classes and responsibilities in this repository should be confirmed against the source code.
+
+## 🗺️ Future Improvements
+
+The following are potential enhancements, not claims that these features are already implemented:
+
+- [ ] Add automated execution through GitHub Actions or Jenkins.
+- [ ] Integrate reporting with Extent Reports or Allure.
+- [ ] Expand automated test coverage.
+- [ ] Add data-driven testing examples.
+- [ ] Add cross-browser testing support.
+- [ ] Improve failure diagnostics and test reporting.
+- [ ] Document the page objects, test classes, and framework architecture.
 
 ## 🤝 Contributing
 
-Suggestions and improvements are welcome. Feel free to open an issue or submit a pull request.
+Suggestions and improvements are welcome.
+
+If you find an issue or have an idea to improve the framework, open an issue or submit a pull request.
 
 ## 👤 Author
 
 **Srinivasa Rao Guguloth**
 
 GitHub: [@bunnySrinu](https://github.com/bunnySrinu)
+
+Project: [SeleniumAutomationPOM](https://github.com/bunnySrinu/SeleniumAutomationPOM)
+
+---
+
+*This repository is intended for learning, demonstrating, and extending Selenium-based UI test automation practices.*
